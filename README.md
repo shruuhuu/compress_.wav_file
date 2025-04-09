@@ -2,44 +2,32 @@
 
 ## Project Overview
 
-This project demonstrates the application of Huffman coding for compressing raw audio data from an 8-bit PCM WAV file using an ESP32 microcontroller. A 256-byte audio sample is sent to the ESP32 via serial communication. The ESP32 performs Huffman encoding on the data and returns the encoded bitstream and compression statistics. Python scripts are used for generating the WAV file, sending the data, and visualizing the results.
-
----
+This project demonstrates how Huffman coding can be applied to compress audio data from an 8-bit PCM WAV file using an ESP32 microcontroller. A 256-byte audio segment is transmitted from a computer to the ESP32 via serial communication. The ESP32 performs Huffman encoding, generates a binary codebook, compresses the input, and returns the encoded bitstream and statistics over serial. Python scripts are used to generate test audio, send data, and visualize results.
 
 ## Objective
 
-To implement Huffman compression of audio data on a resource-constrained microcontroller and evaluate compression efficiency through visualization and manual verification.
-
----
+To implement Huffman compression on a microcontroller, specifically ESP32, and evaluate the compression efficiency for raw audio data using Python-based tools.
 
 ## Components and Tools
 
 ### Hardware
 - ESP32 Development Board
-- USB Cable
-- Computer (with Python and Arduino IDE)
+- USB Interface Cable
+- Computer with Python and Arduino IDE
 
-### Software & Libraries
+### Software and Libraries
 - Arduino IDE
-- Python 3
+- Python 3.x
 - Python Libraries:
   - `wave`
   - `numpy`
   - `matplotlib`
   - `pyserial`
 
----
-
 ## Project Workflow
 
-1. Generate a synthetic 8-bit PCM WAV file using Python.
-2. Send 256 bytes of audio sample data from the WAV file to the ESP32 via serial.
-3. ESP32 reads the bytes, constructs a Huffman tree, generates a codebook, and compresses the data.
-4. Compressed data and statistics (original vs compressed size) are printed over serial.
-5. Python script is used to visualize waveform, amplitude histogram, and compression ratio.
-
----
-
-## Conclusion
-
-This project validates the use of Huffman coding for real-time audio data compression on a microcontroller. The implementation confirms the algorithm's effectiveness for compressing WAV audio samples and showcases how embedded systems can be integrated with data visualization tools on a PC.
+1. A Python script generates or loads an 8-bit PCM WAV audio file.
+2. 256 bytes of audio samples are read and sent to the ESP32 over serial.
+3. The ESP32 reads the samples, calculates frequency of each byte, builds a Huffman tree, and encodes the data.
+4. The ESP32 prints the generated codebook and compression statistics.
+5. A separate Python script visualizes the audio waveform, amplitude histogram, and original vs. compressed bit sizes.

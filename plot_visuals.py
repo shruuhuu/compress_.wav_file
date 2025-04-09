@@ -15,7 +15,7 @@ frames = wav_file.readframes(256)  # Read 256 samples
 samples = np.frombuffer(frames, dtype=np.uint8)
 wav_file.close()
 
-print("✅ Loaded 256 samples from WAV file")
+print("Loaded 256 samples from WAV file")
 
 # ---------- 2. Huffman Encoding ----------
 class Node:
@@ -63,14 +63,14 @@ plt.figure(figsize=(12, 6))
 # A. Plot original waveform
 plt.subplot(2, 2, 1)
 plt.plot(samples, color='purple')
-plt.title("📈 Original Audio Waveform")
+plt.title("Original Audio Waveform")
 plt.xlabel("Sample Index")
 plt.ylabel("Amplitude")
 
 # B. Frequency histogram
 plt.subplot(2, 2, 2)
 plt.hist(samples, bins=50, color='orange')
-plt.title("📊 Amplitude Frequency Histogram")
+plt.title("Amplitude Frequency Histogram")
 plt.xlabel("Amplitude")
 plt.ylabel("Count")
 
@@ -79,7 +79,7 @@ original_bits = len(samples) * 8
 compressed_bits = len(encoded_bits)
 plt.subplot(2, 1, 2)
 plt.bar(["Original", "Compressed"], [original_bits, compressed_bits], color=["blue", "green"])
-plt.title("🧠 Huffman Compression Stats")
+plt.title("Huffman Compression Stats")
 plt.ylabel("Total Bits")
 
 plt.tight_layout()

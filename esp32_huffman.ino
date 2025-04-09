@@ -109,7 +109,7 @@ void loop() {
       Node* root = buildTree();
       generateCodes(root, "");
 
-      Serial.println("📦 Codebook:");
+      Serial.println("Codebook:");
       for (int i = 0; i < 256; i++) {
         if (codes[i].length() > 0) {
           Serial.print(i);
@@ -119,7 +119,7 @@ void loop() {
       }
 
       String compressed = encodeWav();
-      Serial.println("🔒 Huffman Encoded Output (first 200 bits):");
+      Serial.println("Huffman Encoded Output (first 200 bits):");
       Serial.println(compressed.substring(0, 200));
 
       Serial.print("Original bits: ");

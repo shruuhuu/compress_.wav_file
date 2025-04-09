@@ -21,4 +21,4 @@ with wave.open(filename, "wb") as wav_file:
     wav_file.setframerate(sample_rate)
     wav_file.writeframes(samples.tobytes())
 
-print(f"✅ Generated {filename} - {frequency}Hz tone, {duration}s, 8-bit mono")
+print(f"Generated {filename} - {frequency}Hz tone, {duration}s, 8-bit mono")

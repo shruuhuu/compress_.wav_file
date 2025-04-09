@@ -98,8 +98,11 @@ void loop() {
 
     if (byteCount == MAX_BYTES) {
       received = true;
-
-      Serial.println("🎧 Received WAV samples:");
+      Serial.println("Received WAV samples:");
+      for (int i = 0; i < MAX_BYTES; i++) {
+        Serial.print(wavData[i]);
+        Serial.print(i < MAX_BYTES - 1 ? ", " : "\n");
+      }
       for (int i = 0; i < MAX_BYTES; i++) {
         freq[wavData[i]]++;
       }
